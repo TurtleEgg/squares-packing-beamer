@@ -23,10 +23,11 @@
   \filldraw[fill=sqGray,draw=black,line width=0.5pt,rotate around={45:(2.35355,2.35355)}]
     (1.85355,1.85355) rectangle (2.85355,2.85355);
   \draw[draw=black,line width=0.6pt] (0,0) rectangle (4.70711,4.70711);
-  % две прямые размерные линии, раздвинутые для читаемости
-  \draw[black,line width=0.4pt] (4.70711,4.88211) -- (5.55086,4.88211);
-  \draw[red,line width=0.8pt] (4.70711,4.67553) -- (5.55086,4.67553);
-  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.17961,5.22711) -- (5.17961,4.88211);
-  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.17961,4.35553) -- (5.17961,4.67553);
+  % выносная линия от ЛЕВОЙ схемы: три четверти промежутка, правой схемы не касается
+  \draw[red,line width=0.7pt] (4.70711,4.79211) -- (5.55086,4.79211);
+  % выносная линия от ПРАВОЙ схемы: три четверти промежутка, левой схемы не касается
+  \draw[red,line width=0.7pt] (5.83211,4.59053) -- (4.98836,4.59053);
+  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.26961,5.22711) -- (5.26961,4.79211);
+  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.26961,4.35553) -- (5.26961,4.59053);
 \end{tikzpicture}
 \end{document}
