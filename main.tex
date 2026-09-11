@@ -34,13 +34,14 @@
 \newcommand{\statusProved}{\textcolor{cProved}{\textbf{Оптимальность доказана}}}
 \newcommand{\statusFound}{\textcolor{cFound}{\textbf{Лучшая известная конструкция}}}
 \newcommand{\statusTrivial}{\textcolor{cTrivial}{\textbf{Тривиальная упаковка}}}
+\newcommand{\statusTrivBest}{\textcolor{cTrivial}{\textbf{Тривиальная — лучшая известная}}}
 
 % --- Картинки или плейсхолдеры ----------------------------------------------
 % Плейсхолдеры включены по умолчанию. Чтобы подставить настоящие картинки,
 % положите файлы 1.png, 2.png, ... в папку figs/ и переключите флаг ниже
 % (false -> true).
 \newif\ifuseimages
-\useimagesfalse
+\useimagestrue
 
 % Рамка-плейсхолдер (без TikZ, чтобы сборка была быстрой)
 % #1 - сторона в см, #2 - имя файла, #3 - толщина рамки в pt
@@ -61,11 +62,11 @@
 % Компактный кадр для сетки 2x2
 \newcommand{\imgphs}[2]{%
   \ifuseimages\includegraphics[width=#1cm,height=#1cm,keepaspectratio]{#2}%
-  \else\imgphbox{#1}{#2}{0.8}\fi}
+  \else\imgphbox{#1}{$n=#2$}{0.8}\fi}
 
 \title{Задачи об упаковке}
 \subtitle{Часть I: плотнейшая упаковка шаров \quad\textbullet\quad Часть II: единичные квадраты в квадрате}
-\author{Схемы упаковки шаров построены средствами TikZ;\\ данные по квадратам — Erich Friedman, \emph{Squares in Squares}}
+\author{Часть I: схемы построены средствами TikZ\\ Часть II: данные и схемы упаковок — Erich Friedman, \emph{Squares in Squares}}
 \date{}
 
 \begin{document}
@@ -294,8 +295,9 @@
     \item \statusFound{} — указано \emph{Found by}: это верхняя оценка $s_n \le \ldots$; оптимальность \textbf{не} доказана.
     \item \statusTrivial{} — очевидная раскладка без наклонённых квадратов.
   \end{itemize}
-  \item Вместо иллюстраций на слайдах оставлены рамки-плейсхолдеры: подставьте файлы командой
-        \texttt{\textbackslash includegraphics}.
+  \item Иллюстрации для $n \le 11$, $14$, $15$, $17\ldots19$ и $52\ldots55$ — оригинальные схемы
+        Эриха Фридмана; для $n = 12, 13, 16, 20$ тривиальные раскладки построены в TikZ.
+  \item Серый квадрат — единичный; тонкая рамка — контейнер со стороной $s$.
 \end{itemize}
 \end{frame}
 
@@ -307,7 +309,8 @@
 Статус & Случаев & Значения $n$ \\
 \midrule
 
-\statusTrivial & 3 & 1, 4, 9 \\
+\statusTrivial & 4 & 1, 4, 9, 16 \\
+\statusTrivBest & 3 & 12, 13, 20 \\
 \statusProved & 9 & 2, 3, 5, 6, 7, 8, 10, 14, 15 \\
 \statusFound & 8 & \raggedright\arraybackslash 11, 17, 18, 19, 52, 53, 54, 55 \\
 \bottomrule
@@ -315,7 +318,8 @@
 
 \vspace{1em}
 \begin{minipage}{0.86\textwidth}\scriptsize\color{cMuted}
-Показаны все нетривиальные упаковки страницы с $n \le 20$, а также блок $n = 52\ldots55$.
+Показаны все $n \le 20$, а также блок $n = 52\ldots55$. Для $n = 12, 13, 16, 20$ страница
+иллюстраций не даёт: там лучшей известной остаётся тривиальная раскладка без наклонённых квадратов.
 Доказательства оптимальности известны лишь для малых $n$; остальные записи — рекордные конструкции.
 \end{minipage}
 \end{frame}
@@ -327,7 +331,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{1.png}
+\imgphs{2.7}{1}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -342,7 +346,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{2.png}
+\imgphs{2.7}{2}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -359,7 +363,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{3.png}
+\imgphs{2.7}{3}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -374,7 +378,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{4.png}
+\imgphs{2.7}{4}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -398,7 +402,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{5.png}
+\imgphs{2.7}{5}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -413,7 +417,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{6.png}
+\imgphs{2.7}{6}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -430,7 +434,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{7.png}
+\imgphs{2.7}{7}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -445,7 +449,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{8.png}
+\imgphs{2.7}{8}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -469,7 +473,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{9.png}
+\imgphs{2.7}{9}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -484,7 +488,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{10.png}
+\imgphs{2.7}{10}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -501,7 +505,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{11.png}
+\imgphs{2.7}{11}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -514,7 +518,20 @@
 \end{minipage}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.48\textwidth}\ \end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[c]{2.8cm}
+\imgphs{2.7}{12}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{2.9cm}
+\raggedright
+{\scriptsize $n = 12$}\\[1pt]
+{\scriptsize $s = 4$}\\[1pt]
+{\scriptsize $n/s^2 = 0.750$}\\[3pt]
+{\scriptsize \statusTrivBest}\\[1pt]
+{\scriptsize\color{cMuted} не указан}
+\end{minipage}
+\end{minipage}
 
 \vspace{1.2em}
 
@@ -527,7 +544,22 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{14.png}
+\imgphs{2.7}{13}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{2.9cm}
+\raggedright
+{\scriptsize $n = 13$}\\[1pt]
+{\scriptsize $s = 4$}\\[1pt]
+{\scriptsize $n/s^2 = 0.812$}\\[3pt]
+{\scriptsize \statusTrivBest}\\[1pt]
+{\scriptsize\color{cMuted} не указан}
+\end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[c]{2.8cm}
+\imgphs{2.7}{14}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -539,10 +571,12 @@
 {\scriptsize\color{cMuted} Erich Friedman, 1999}
 \end{minipage}
 \end{minipage}
-\hfill
+
+\vspace{1.2em}
+
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{15.png}
+\imgphs{2.7}{15}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -552,6 +586,21 @@
 {\scriptsize $n/s^2 = 0.938$}\\[3pt]
 {\scriptsize \statusProved}\\[1pt]
 {\scriptsize\color{cMuted} Erich Friedman, 1999}
+\end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[c]{2.8cm}
+\imgphs{2.7}{16}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{2.9cm}
+\raggedright
+{\scriptsize $n = 16$}\\[1pt]
+{\scriptsize $s = 4$}\\[1pt]
+{\scriptsize $n/s^2 = 1.000$}\\[3pt]
+{\scriptsize \statusTrivial}\\[1pt]
+{\scriptsize\color{cMuted} не указан}
 \end{minipage}
 \end{minipage}
 
@@ -566,7 +615,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{17.png}
+\imgphs{2.7}{17}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -581,7 +630,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{18.png}
+\imgphs{2.7}{18}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -598,7 +647,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{19.png}
+\imgphs{2.7}{19}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -611,7 +660,20 @@
 \end{minipage}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.48\textwidth}\ \end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[c]{2.8cm}
+\imgphs{2.7}{20}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{2.9cm}
+\raggedright
+{\scriptsize $n = 20$}\\[1pt]
+{\scriptsize $s = 5$}\\[1pt]
+{\scriptsize $n/s^2 = 0.800$}\\[3pt]
+{\scriptsize \statusTrivBest}\\[1pt]
+{\scriptsize\color{cMuted} не указан}
+\end{minipage}
+\end{minipage}
 
 \vspace{1.2em}
 
@@ -624,7 +686,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{52.png}
+\imgphs{2.7}{52}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -639,7 +701,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{53.png}
+\imgphs{2.7}{53}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -656,7 +718,7 @@
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{54.png}
+\imgphs{2.7}{54}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
@@ -671,7 +733,7 @@
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
 \begin{minipage}[c]{2.8cm}
-\imgphs{2.7}{55.png}
+\imgphs{2.7}{55}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{2.9cm}
