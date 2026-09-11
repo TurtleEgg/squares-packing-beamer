@@ -23,10 +23,11 @@
   \filldraw[fill=sqGray,draw=black,line width=0.5pt,rotate around={45:(2.35355,2.35355)}]
     (1.85355,1.85355) rectangle (2.85355,2.85355);
   \draw[draw=black,line width=0.6pt] (0,0) rectangle (4.70711,4.70711);
-  % размерная линия: от правого края этой схемы до левого края схемы Бидвелла,
-  % проведена на уровне её стороны; стрелки показывают разницу сторон
+  % выносная линия от верха этой упаковки; зазор показан увеличенным
+  \draw[black,line width=0.4pt] (4.70711,4.70711) -- (5.00711,4.90711) -- (5.83211,4.90711);
+  % размерная линия на уровне стороны упаковки Бидвелла
   \draw[red,line width=0.8pt] (4.70711,4.67553) -- (5.83211,4.67553);
-  \draw[black,line width=0.45pt,-{Stealth[length=2mm]}] (5.40461,5.32711) -- (5.40461,4.70711);
-  \draw[black,line width=0.45pt,-{Stealth[length=2mm]}] (5.40461,4.05553) -- (5.40461,4.67553);
+  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.35961,5.22711) -- (5.35961,4.90711);
+  \draw[black,line width=0.45pt,-{Stealth[length=1.8mm]}] (5.35961,4.35553) -- (5.35961,4.67553);
 \end{tikzpicture}
 \end{document}
