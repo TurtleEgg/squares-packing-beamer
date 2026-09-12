@@ -19,3 +19,8 @@
 
 Чтобы вернуть рамки-плейсхолдеры вместо картинок, замените в main.tex
 \useimagestrue на \useimagesfalse.
+
+  live.jpg, jesus.jpg, monitor.jpg, xkcd.jpg, keyboard.jpg, chess.jpg
+                    — мемы про упаковку 17 квадратов, по одному на слайд после
+                      слайда сравнения; источники не установлены, картинки
+                      приложены пользователем (xkcd.jpg — комикс xkcd).
