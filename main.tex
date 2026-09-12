@@ -65,23 +65,21 @@
   \else\imgphbox{#1}{$n=#2$}{0.8}\fi}
 
 \title{Задачи об упаковке}
-\subtitle{Часть I: плотнейшая упаковка шаров \quad\textbullet\quad Часть II: единичные квадраты в квадрате}
-\author{Часть I: схемы построены средствами TikZ\\ Часть II: данные и схемы упаковок — Erich Friedman, \emph{Squares in Squares}}
+\author{}
 \date{}
 
 \begin{document}
 
 \begin{frame}
+\vfill
 \centering
-\includegraphics[width=\textwidth,height=0.95\textheight,keepaspectratio]{wife0}
+{\usebeamercolor[fg]{title}\LARGE\bfseries\inserttitle}
+\vfill
 \end{frame}
 
 \begin{frame}
-  \titlepage
-  \vspace{-1em}
-  \begin{center}\footnotesize\color{cMuted}
-  Часть II, источник данных: \texttt{https://tabatkins.github.io/efmath/packing/squinsqu/}
-  \end{center}
+\centering
+\includegraphics[width=\textwidth,height=0.95\textheight,keepaspectratio]{wife0}
 \end{frame}
 
 \begin{frame}{Плотнейшая упаковка шаров: постановка}
@@ -742,7 +740,12 @@ $\Delta s$ & $+0.03158$ ($+0.68\%$) & — \\
 
 \begin{frame}
 \centering
-\includegraphics[width=\textwidth,height=0.95\textheight,keepaspectratio]{triangle}
+\includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]{triangle}
+
+\vspace{0.4em}
+{\footnotesize
+\url{https://tabatkins.github.io/efmath/packing/squinsqu/} \qquad
+\url{https://www.packomania.com/}}
 \end{frame}
 
 \end{document}
